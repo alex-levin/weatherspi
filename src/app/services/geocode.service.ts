@@ -17,6 +17,7 @@ export class GeocodeService {
     return this.http.get(url).subscribe(data => {
         console.log(data as any);
         // Prints Array [ 42.2846603393555, -71.3477401733398 ]
+        // casting data to any to avoid resourceSets property does not exist on type Object
         console.log((data as any).resourceSets[0].resources[0].point.coordinates);
     });
   }
